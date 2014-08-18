@@ -10,6 +10,7 @@ wWidth = $(window).width()
 wHeight = $(window).height()
 
 
+
 draw = () ->
   stats.begin()
   renderer.render(stage)
@@ -40,8 +41,6 @@ mapInit = () ->
   document.body.appendChild( stats.domElement )
 #####################
 
-
-
   renderer = new PIXI.CanvasRenderer(wWidth, wHeight, document.querySelector(".map"))
   stage = new PIXI.Stage
   mapTexture = PIXI.Texture.fromImage('map_small.jpg')
@@ -69,17 +68,14 @@ mapInit = () ->
 
   zoom.assign $(".zoom"), 'text'
   zoom.onValue (x) ->
-    # map.position.x += (renderer.width*x)/2
-    # map.position.y += (renderer.height*x)/2
     map.scale.x = x
     map.scale.y = x
     requestAnimationFrame(draw)
 
   canvas = $(".map")
-  html  = $("html")
   dragging = canvas.asEventStream('mousedown')
     .map(true)
-    .merge(html.asEventStream('mouseup')
+    .merge(canvas.asEventStream('mouseup')
     .map(false))
     .toProperty(false)
   deltas = canvas.asEventStream('mousemove')
@@ -108,6 +104,8 @@ mapInit = () ->
 
 $(document).ready ->
   do mapInit
+
+$(window).resize ->
 
 
 

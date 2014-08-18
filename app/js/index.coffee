@@ -2,29 +2,10 @@ Bacon = require 'src/bacon'
 Stats = require "js/fps"
 
 
-
-require "js/req1"
-text = require "js/req2"
-console.log text
-
-
-
-
-
-
-
-
-
-
-
-stats=0
-
+stats = 0
 renderer = 0
 stage = 0
 map = 0
-
-
-
 wWidth = $(window).width()
 wHeight = $(window).height()
 
@@ -35,10 +16,6 @@ draw = () ->
   requestAnimationFrame(draw)
   stats.end()
 
-animate = () ->
-  map.rotation += 0.01
-  renderer.render(stage)
-  requestAnimationFrame(animate)
 
 xyFromEvent = (v) -> [v.clientX, v.clientY]
 
@@ -54,21 +31,13 @@ add = (p1, p2) ->
 
 
 mapInit = () ->
-# ###################
-
-
-
+####################
   stats = new Stats()
   stats.setMode(0)
   stats.domElement.style.position = 'absolute'
   stats.domElement.style.left = '0px'
   stats.domElement.style.top = '0px'
-
   document.body.appendChild( stats.domElement )
-
-
-
-
 #####################
 
 
@@ -80,7 +49,7 @@ mapInit = () ->
   window.map = map
   map.anchor.x = 0.5
   map.anchor.y = 0.5
-  console.log map.x
+
 
   stage.addChild(map)
   do draw

@@ -3,113 +3,16 @@ head
   meta(name="viewport" content="width=device-width")
 
   link(rel="stylesheet" href="stylesheets/app.css")
-
   script(src="javascripts/vendor.js")
   script(src="javascripts/app.js")
 
+
   script.
     require('js/index');
+
 body
-  .menu.index
-    .inner
-      ul
-        li
-          a(href="catalog.html") прокат
-        li
-          a(href="terms.html") инфо
-        li
-          a(href="gallery.html") галерея
-        li
-          a(href="contacts.html") контакты
-      .logo
-        a(href="index.html")
-          img(src="/i/logo.png")
-  .main
-    .inner
-      .top_spacer
-      .centr_container
-        .arrow.left_arrow
-        .arrow.right_arrow.disp
-        .dot_block
-          ul
-            li
-              .dot.active
-            li
-              .dot
-            li
-              .dot
-            li
-              .dot
-            li
-              .dot
-            li
-              .dot
-            li
-              .dot
-        .titler
-          .title
-            .first
-              p велики
-          .title
-            p ролики
-          .title
-            p самокаты
-          .title
-            p сноуборды
-          .title
-            .ph_v
-              p фото/видео
-          .title
-            p туризм
-          .title
-            p отдых
-        .slider
-          .slide.bikes
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
-          .slide.rolls
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
-          .slide.scooters
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
-          .slide.snowboards
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
-          .slide.photo_video
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
-          .slide.tourism
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
-          .slide.rest
-            ._content
-            .namer
-              .name
-                p Schwinn Corvette
-              .allmodel
-                p все модели
+  canvas.map
+  .control_panel
+    button.plus +
+    button.minus –
+    .zoom 1
